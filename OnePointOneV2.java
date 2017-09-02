@@ -5,7 +5,18 @@ public class OnePointOneV2
 {
 	public boolean isAllUniqueCharacters(String str)
 	{
-		HashMap<String, Boolean> tracker = new HashMap<String, Boolean>();		
+		char[] charArray = str.toCharArray();
+		HashMap<Character, Boolean> tracker = new HashMap<Character, Boolean>();		
+		for(int i = 0; i < charArray.length; i++)
+		{
+			//if(tracker.containsKey(new Character(charArray[i])))
+			if(tracker.containsKey(charArray[i]))
+				return false;
+			else
+			{
+				tracker.put(charArray[i], true);
+			}	
+		}
 		return false;
 	}
 	public static void main(String... args)
